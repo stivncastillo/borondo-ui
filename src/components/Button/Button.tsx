@@ -1,9 +1,13 @@
 import React from "react";
 
-type Props = {};
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
 
-const Button = (props: Props) => {
-  return <div className="bg-red-500 text-white py-2 px-4">Button</div>;
+const Button = ({ children }: Props) => {
+  return (
+    <button className="bg-red-500 text-white py-2 px-4">{children}</button>
+  );
 };
 
 export default Button;
